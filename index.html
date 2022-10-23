@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/987449563d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="flex match-results">
+
+    <!-- top events -->
+    <div id="events" class="x1 flex middle center greyback">
+      <div class="dropdown" onmouseenter="eventsDropdownToggle(this)" onmouseleave="eventsDropdownToggle(this)">
+        <div id="events-content" class="flex center">TOP EVENTS</div>
+        <div class="dropdown-content">
+          <button onclick="populateResults(); updateEvents(this);">TOP EVENTS</button>
+          <button onclick="populateResults('NFL'); updateEvents(this);">NFL</button>
+          <button onclick="populateResults('MLB'); updateEvents(this);">MLB</button>
+          <button onclick="populateResults('NHL'); updateEvents(this);">NHL</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- match results carousel -->
+    <div id="carousel" class="flex left">
+
+    </div>
+  </div>
+
+  <nav id="top-nav">
+    <div class="flex">
+      <div class="flex middle left" id="left-content">
+        <h1 id="espn-logo">
+          <a href="/"></a>
+        </h1>
+        <div class="dropdown" onmouseenter="sportsDropdownToggle(this)" onmouseleave="sportsDropdownToggle(this)">
+          <div>NFL</div>
+          <div class="bridge"></div>
+          <div class="dropdown-content hide">
+            <div id="NFL-dropdown" class="flex sports-dropdown">
+              <div class="x1 sports-dropdown-nav">
+                <div>Home</div>
+                <div>Scores</div>
+                <div>Schedule</div>
+                <div>Standings</div>
+                <div>Stats</div>
+                <div>Teams</div>
+                <div>Depth Charts</div>
+                <div>NFL Daily Lines</div>
+                <div>Tickets</div>
+              </div>
+              <div class="x4 sports-dropdown-content">
+                <div class="flex">
+                  <div class="x1">
+                    <div>AFC East</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/buf.png" alt="">
+                      <div>
+                        Buffalo Bills
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/mia.png" alt="">
+                      <div>
+                        Miami Dolphins
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/ne.png" alt="">
+                      <div>
+                        New England Patriots
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/nyj.png" alt="">
+                      <div>
+                        New York Jets
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>AFC North</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/bal.png" alt="">
+                      <div>
+                        Baltimore Ravens
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/cin.png" alt="">
+                      <div>
+                        Cincinnati Bengals
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/cle.png" alt="">
+                      <div>
+                        Cleveland Brows
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/pit.png" alt="">
+                      <div>
+                        Pittsburgh Steelers
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>AFC South</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/hou.png" alt="">
+                      <div>
+                        Houston Texas
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/ind.png" alt="">
+                      <div>
+                        Indianapolis Colts
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/jax.png" alt="">
+                      <div>
+                        Jacksonville Jaguars
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/ten.png" alt="">
+                      <div>
+                        Tennessee Titans
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>AFC West</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/den.png" alt="">
+                      <div>
+                        Denver Broncos
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/kc.png" alt="">
+                      <div>
+                        Kansas City Chiefs
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/lv.png" alt="">
+                      <div>
+                        Las Vegas Raiders
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/lac.png" alt="">
+                      <div>
+                        Los Angeles Chargers
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="x1">
+                    <div>NFC East</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/dal.png" alt="">
+                      <div>
+                        Dallas Cowboys
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/nyg.png" alt="">
+                      <div>
+                        New York Giants
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/phi.png" alt="">
+                      <div>
+                        Philadelphia Eagles
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/wsh.png" alt="">
+                      <div>
+                        Washington Commanders
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>NFC North</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/chi.png" alt="">
+                      <div>
+                        Chicago Bears
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/det.png" alt="">
+                      <div>
+                        Detroit Lions
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/gb.png" alt="">
+                      <div>
+                        Green Bay Packers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/min.png" alt="">
+                      <div>
+                        Minnesota Vikings
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>NFC South</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/atl.png" alt="">
+                      <div>
+                        Atlanta Falcons
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/car.png" alt="">
+                      <div>
+                        Carolina Panthers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/no.png" alt="">
+                      <div>
+                        New Orleans Saints
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/tb.png" alt="">
+                      <div>
+                        Tampa Bay Buccaneers
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>NFC West</div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/ari.png" alt="">
+                      <div>
+                        Arizona Cardinals
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/lar.png" alt="">
+                      <div>
+                        Los Angeles Rams
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/sf.png" alt="">
+                      <div>
+                        San Francisco 49ers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/nfl-logos/sea.png" alt="">
+                      <div>
+                        Seattle Seahawks
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dropdown" onmouseenter="sportsDropdownToggle(this)" onmouseleave="sportsDropdownToggle(this)">
+          <div>MLB</div>
+          <div class="bridge"></div>
+          <div class="dropdown-content hide">
+            <div id="MLB-dropdown" class="flex sports-dropdown">
+              <div class="x1 sports-dropdown-nav">
+                <div>Home</div>
+                <div>Scores</div>
+                <div>Schedule</div>
+                <div>Standings</div>
+                <div>Stats</div>
+                <div>Teams</div>
+                <div>Depth Charts</div>
+                <div>Daily Lines</div>
+                <div>Playoff Race</div>
+              </div>
+              <div class="x4 sports-dropdown-content">
+                <div class="flex">
+                  <div class="x1">
+                    <div>American League East</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/bal.png" alt="">
+                      <div>
+                        Baltimore Orioles
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/bos.png" alt="">
+                      <div>
+                        Boston Red Sox
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/nyy.png" alt="">
+                      <div>
+                        New York Yankees
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/tb.png" alt="">
+                      <div>
+                        Tampa Bay Rays
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/tor.png" alt="">
+                      <div>
+                        Toronto Blue Jays
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>American League Central</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/chc.png" alt="">
+                      <div>
+                        Chicago White Sox
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/cle.png" alt="">
+                      <div>
+                        Celveland Guardians
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/det.png" alt="">
+                      <div>
+                        Detroit Tigers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/kc.png" alt="">
+                      <div>
+                        Kansas City Royals
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/min.png" alt="">
+                      <div>
+                        Minnesota Twins
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>American League West</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/hou.png" alt="">
+                      <div>
+                        Houston Astros
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/laa.png" alt="">
+                      <div>
+                        Los Angeles Angels
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/oak.png" alt="">
+                      <div>
+                        Oakland Athletics
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/sea.png" alt="">
+                      <div>
+                        Seattle Mariners
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/tex.png" alt="">
+                      <div>
+                        Texas Rangers
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex">
+                  <div class="x1">
+                    <div>National League East</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/atl.png" alt="">
+                      <div>
+                        Atlanta Braves
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/mia.png" alt="">
+                      <div>
+                        Miama Marlins
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/nym.png" alt="">
+                      <div>
+                        New York Mets
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/phi.png" alt="">
+                      <div>
+                        Philadelphia Phillies
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/wsh.png" alt="">
+                      <div>
+                        Washington Nationals
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>National League Central</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/chc.png" alt="">
+                      <div>
+                        Chicago Cubs
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/cin.png" alt="">
+                      <div>
+                        Cincinnati Reds
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/mil.png" alt="">
+                      <div>
+                        Milwaukee Brewers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/pit.png" alt="">
+                      <div>
+                        Pittsburgh Pirates
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/stl.png" alt="">
+                      <div>
+                        St. Louis Cardinals
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x1">
+                    <div>National League West</div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/ari.png" alt="">
+                      <div>
+                        Arizona Diamondbacks
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/col.png" alt="">
+                      <div>
+                        Colorado Rockies
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/lad.png" alt="">
+                      <div>
+                        Los Angeles Dodgers
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/sd.png" alt="">
+                      <div>
+                        San Diego Padres
+                      </div>
+                    </div>
+                    <div class="flex middle">
+                      <img src="logos/mlb-logos/sf.png" alt="">
+                      <div>
+                        San Francisco Giants
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="dropdown" onmouseenter="sportsDropdownToggle(this)" onmouseleave="sportsDropdownToggle(this)">
+          <div>NHL</div>
+          <div class="bridge"></div>
+          <div class="dropdown-content hide">
+            <div id="NHL-dropdown" class="flex sports-dropdown">
+              <div class="x1 sports-dropdown-nav">
+                <div>Home</div>
+                <div>Schedule</div>
+                <div>Scores</div>
+                <div>Standings</div>
+                <div>Stats</div>
+                <div>Teams</div>
+                <div>How To Watch NHL Games</div>
+                <div>NHL Futures</div>
+                <div>Sign Up: Fantasy Hockey</div>
+              </div>
+              <div class="x4 flex sports-dropdown-content">
+                <div class="x1">
+                  <div>Atlantic Division</div>
+                  <div class="flex middle">
+                    <img src="logos/mlb-logos/bos.png" alt="">
+                    <div>
+                      Boston Bruins
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/buf.png" alt="">
+                    <div>
+                      Buffalo Sabres
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/det.png" alt="">
+                    <div>
+                      Detroit Red Wings
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/fla.png" alt="">
+                    <div>
+                      Florida Panthers
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/mtl.png" alt="">
+                    <div>
+                      Montreal Canadiens
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/ott.png" alt="">
+                    <div>
+                      Ottawa Senators
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/tb.png" alt="">
+                    <div>
+                      Tampa Bay Lightning
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/tor.png" alt="">
+                    <div>
+                      Toronto Maple Leafs
+                    </div>
+                  </div>
+                </div>
+                <div class="x1">
+                  <div>Metropolitan Division</div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/car.png" alt="">
+                    <div>
+                      Carolina Hurricanes
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/cbj.png" alt="">
+                    <div>
+                      Columbus Blue Jackets
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/nj.png" alt="">
+                    <div>
+                      New Jersey Devils
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/nyi.png" alt="">
+                    <div>
+                      New York Islanders
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/nyr.png" alt="">
+                    <div>
+                      New York Rangers
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/phi.png" alt="">
+                    <div>
+                      Philadelphia Flyers
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/pit.png" alt="">
+                    <div>
+                      Pittsburgh Penguins
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/wsh.png" alt="">
+                    <div>
+                      Washington Capitals
+                    </div>
+                  </div>
+                </div>
+                <div class="x1">
+                  <div>Central Division</div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/ari.png" alt="">
+                    <div>
+                      Arizona Coyotes
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/chi.png" alt="">
+                    <div>
+                      Chicago Blackhawks
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/col.png" alt="">
+                    <div>
+                      Colorado Avalanche
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/dal.png" alt="">
+                    <div>
+                      Dallas Stars
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/min.png" alt="">
+                    <div>
+                      Minnesota Wild
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/nsh.png" alt="">
+                    <div>
+                      Nashville Predators
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/stl.png" alt="">
+                    <div>
+                      St. Louis Blues
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/wpg.png" alt="">
+                    <div>
+                      Winnipeg Jets
+                    </div>
+                  </div>
+                </div>
+                <div class="x1">
+                  <div>Pacific Division</div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/ana.png" alt="">
+                    <div>
+                      Anaheim Ducks
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/cgy.png" alt="">
+                    <div>
+                      Calgary Flames
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/edm.png" alt="">
+                    <div>
+                      Edmonton Oilers
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/la.png" alt="">
+                    <div>
+                      Los Angeles Kings
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/sj.png" alt="">
+                    <div>
+                      San Jose Sharks
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/sea.png" alt="">
+                    <div>
+                      Seattle Kraken
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/van.png" alt="">
+                    <div>
+                      Vancouver Canucks
+                    </div>
+                  </div>
+                  <div class="flex middle">
+                    <img src="logos/nhl-logos/vgk.png" alt="">
+                    <div>
+                      Vegas Golden Knights
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="x1 flex middle right">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
+  <!-- <nav id="bottom-nav">
+    <div></div>
+  </nav> -->
+
+  <main>
+    <div></div>
+  </main>
+
+  <script src="matches.js" onload="populateResults()"></script>
+</body>
+
+</html>
